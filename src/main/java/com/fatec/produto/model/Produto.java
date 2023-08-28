@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Faz com que o id seja incrementado automaticamente pelo JPA.
     private Long id;
     private String descricao;
     private String categoria;
@@ -74,13 +74,14 @@ public class Produto {
     }
 
     public void setEstado(String estado) {
+         // Verifica se o estado é nulo ou vazio
         if (estado == null || estado.isBlank()) {
-            throw new IllegalArgumentException("O estado não pode estar nulo.");
+            this.estado = null; // Permite que o estado seja nulo
         } else {
-            // Verifica se o estado é um dos valores esperados
-            if (!estado.equals("Maduro") && !estado.equals("Verde") && !estado.equals("No Ponto")) {
-                throw new IllegalArgumentException("O estado do produto deve ser 'Maduro', 'Verde' ou 'No Ponto'.");
-            }
+        // Verifica se o estado é um dos valores esperados
+        if (!estado.equals("Maduro") && !estado.equals("Verde") && !estado.equals("No Ponto")) {
+            throw new IllegalArgumentException("O estado do produto deve ser 'Maduro', 'Verde' ou 'No Ponto'.");
+        }
             this.estado = estado;
         }
     }
