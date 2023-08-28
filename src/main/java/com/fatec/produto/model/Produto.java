@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Faz com que o id seja incrementado automaticamente pelo JPA.
     private Long id;
     private String descricao;
     private String categoria;
