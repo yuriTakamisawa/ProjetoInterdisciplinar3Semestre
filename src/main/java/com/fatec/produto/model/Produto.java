@@ -7,7 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+
+@Entity(name = "Produtos")
 public class Produto {
 
     @Id
@@ -20,6 +21,9 @@ public class Produto {
     private int quantidadeEstoque;
     private LocalDate dataValidade;
 
+    public Produto() {
+
+    };
     
     public Produto(String descricao, String categoria, double custo, int quantidadeEstoque, String estado, LocalDate dataValidade) {
         this.descricao = descricao;
