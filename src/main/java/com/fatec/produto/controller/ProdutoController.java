@@ -13,7 +13,7 @@ import com.fatec.produto.model.Produto;
 import com.fatec.produto.model.IprodutoRepository;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/v1/produtos")
 public class ProdutoController {
 
     private IprodutoRepository repository;
