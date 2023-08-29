@@ -10,15 +10,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fatec.produto.model.Produto;
-import com.fatec.produto.repository.ProdutoRepository;
+import com.fatec.produto.model.IprodutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    private ProdutoRepository repository;
+    private IprodutoRepository repository;
 
-    ProdutoController(ProdutoRepository produtoRepository) {
+    ProdutoController(IprodutoRepository produtoRepository) {
         this.repository = produtoRepository;
     }
 
