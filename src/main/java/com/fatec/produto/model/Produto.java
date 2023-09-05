@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
-@Entity(name = "Produtos")
+@Entity
 public class Produto {
 
     @Id
@@ -21,19 +21,20 @@ public class Produto {
     private int quantidadeEstoque;
     private LocalDate dataValidade;
 
-    public Produto() {
-
-    };
     
-    public Produto(String descricao, String categoria, double custo, int quantidadeEstoque, String estado, LocalDate dataValidade) {
+    
+    public Produto(String descricao, String categoria, String estado, double custo, int quantidadeEstoque, LocalDate dataValidade) {
         this.descricao = descricao;
         this.categoria = categoria;
-        this.estado = estado;  
+        this.estado = estado;
         this.custo = custo;
         this.quantidadeEstoque = quantidadeEstoque;
         this.dataValidade = dataValidade;
     }
     
+    public Produto() {
+        // Construtor padrão vazio
+    }
     public Long getId() {
         return id;
     }

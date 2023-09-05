@@ -13,38 +13,36 @@ import com.fatec.produto.model.IprodutoRepository;
 @Service
 public class ProdutoService implements IprodutoService {
 
-    private static final Logger logger = LogManager.getLogger(ProdutoService.class);
-
     @Autowired
-    private IprodutoRepository iprodutoRepository;
+    private IprodutoRepository repository;
 
     @Override
     public List<Produto> listarProdutos() {
-        return iprodutoRepository.findAll();
+        return repository.findAll();
     }
 
     @Override
     public Produto adicionarProduto(Produto produto) {
-        return iprodutoRepository.save(produto);
+        return repository.save(produto);
     }
 
     @Override
     public Produto listarProdutoPorId(Long id) {
-        return iprodutoRepository.findById(id).orElse(null); // Trate o caso em que o produto não existe
+        return repository.findById(id).orElse(null); // Trate o caso em que o produto não existe
     }
 
     @Override
     public Produto atualizarProduto(Produto produto) {
-        return iprodutoRepository.save(produto);
+        return repository.save(produto);
     }
 
     @Override
     public void deletarProduto(Long id) {
-        iprodutoRepository.deleteById(id);
+        repository.deleteById(id);
     }
 
     @Override
     public void deleteAll() {
-        iprodutoRepository.deleteAll();
+        repository.deleteAll();
     }
 }
