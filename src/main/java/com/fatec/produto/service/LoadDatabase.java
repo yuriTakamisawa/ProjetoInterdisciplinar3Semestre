@@ -19,7 +19,6 @@ public class LoadDatabase {
 
     // Somente os produtos serão lançados automaticamente no banco de dados, o resto
     // terá que ser inserido na medida que houver requests, como criar usuario,
-    // fazer pedido.
     @Bean
     CommandLineRunner initProdutoDatabase(IprodutoRepository produtoRepository) {
         return args -> {
