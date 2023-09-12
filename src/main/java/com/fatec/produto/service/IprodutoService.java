@@ -2,11 +2,12 @@ package com.fatec.produto.service;
 
 import java.util.List;
 
+import com.fatec.produto.model.Catalogo;
 import com.fatec.produto.model.Produto;
 
 public interface IprodutoService {
 
-    List<Produto> listarProdutos();
+    public List<Catalogo> listarCatalogo();
 
     Produto adicionarProduto(Produto produto);
 
@@ -17,4 +18,6 @@ public interface IprodutoService {
     void deletarProduto(Long id);
 
     void deleteAll();
+
+    public Object listarProdutos();
 }

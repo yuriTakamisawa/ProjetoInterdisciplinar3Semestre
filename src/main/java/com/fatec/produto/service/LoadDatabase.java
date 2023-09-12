@@ -11,8 +11,6 @@ import com.fatec.produto.model.IprodutoRepository;
 import com.fatec.produto.model.Produto;
 import java.time.LocalDate;
 
-import com.fatec.produto.model.IclienteRepository;
-import com.fatec.produto.model.Cliente;
 
 @Configuration
 public class LoadDatabase {
@@ -29,6 +27,10 @@ public class LoadDatabase {
 
             produtoRepository.saveAll(produtos);
         };
+        
+
+        // TO-DO
+        // atualizar LoadDatabese, injetando as imagens no banco.
     }
 
 }
