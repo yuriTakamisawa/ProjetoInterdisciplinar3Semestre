@@ -1,7 +1,9 @@
 package com.fatec.produto.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,20 +20,41 @@ public class ProdutoService implements IprodutoService {
     @Autowired
     private IprodutoRepository repositoryP;
     @Autowired
-    private IimagemRepository repositoryI;
-    
+    private IimagemService imagemService;
 
     @Override
     public Object listarProdutos() {
-        
+
         return repositoryP.findAll();
+    }
+
+    @Override
+    public List<Object> listarProdutosComImagens() {
+        List<Object> produtosComImagens = new ArrayList<>();
+
+        List<Produto> listaProdutos = repositoryP.findAll();
+
+        for (Produto produto : listaProdutos) {
+            Imagem imagem = imagemService.getImagemByProdutoId(produto.getId());
+
+            Map<String, Object> produtoComImagem = new HashMap<>();
+            produtoComImagem.put("produto", produto);
+
+            if (imagem != null) {
+                produtoComImagem.put("imagem", imagem.getArquivo());
+            }
+
+            produtosComImagens.add(produtoComImagem);
+        }
+
+        return produtosComImagens;
     }
 
     @Override
     public List<Catalogo> listarCatalogo() {
         List<Catalogo> lista = new ArrayList<>();
         List<Produto> listaProdutos = repositoryP.findAll();
-        List<Imagem> listaImagens = repositoryI.findAll();
+        List<Imagem> listaImagens = imagemService.getAll();
 
         for (Produto produto : listaProdutos) {
             for (Imagem imagem : listaImagens) {
@@ -40,10 +63,11 @@ public class ProdutoService implements IprodutoService {
                             produto.getId(),
                             produto.getDescricao(),
                             produto.getCategoria(),
+                            produto.getEstado(),
                             produto.getCusto(),
                             produto.getQuantidadeEstoque(),
-                            imagem.getArquivo()
-                    );  
+                            produto.getDataValidade(),
+                            imagem.getArquivo());
                     lista.add(catalogo);
                 }
             }
@@ -76,5 +100,4 @@ public class ProdutoService implements IprodutoService {
         repositoryP.deleteAll();
     }
 
-    
 }

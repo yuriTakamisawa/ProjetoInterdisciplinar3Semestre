@@ -20,4 +20,6 @@ public interface IprodutoService {
     void deleteAll();
 
     public Object listarProdutos();
+
+    List<Object> listarProdutosComImagens();
 }

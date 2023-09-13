@@ -23,7 +23,7 @@ public class ProdutoController {
 	@GetMapping
 	public ResponseEntity<Object> consultaTodos() {
 		logger.info(">>>>>> apicontroller consulta todos produtos");
-		return ResponseEntity.status(HttpStatus.OK).body(produtoService.listarProdutos());
+		return ResponseEntity.status(HttpStatus.OK).body(produtoService.listarProdutosComImagens());
 	}
 }
 

@@ -1,27 +1,32 @@
 package com.fatec.produto.model;
 
+import java.time.LocalDate;
+
 public class Catalogo {
     private Long id;
     private String descricao;
     private String categoria;
-    private Double custo;
+    private String estado;
+    private double custo;
     private int quantidadeEstoque;
+    private LocalDate dataValidade;
     private byte[] imagem;
 
+    public Catalogo(Long id, String descricao, String categoria, String estado, double custo, int quantidadeEstoque,
+            LocalDate dataValidade, byte[] imagem) {
+        this.id = id;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.estado = estado;
+        this.custo = custo;
+        this.quantidadeEstoque = quantidadeEstoque;
+        this.dataValidade = dataValidade;
+        this.imagem = imagem;
+    }
 
     public Catalogo() {
     }
 
-    public Catalogo(Long id, String descricao, String categoria, Double custo, int quantidadeEstoque, byte[] imagem) {
-        this.id = id;
-        this.descricao = descricao;
-        this.categoria = categoria;
-        this.custo = custo;
-        this.quantidadeEstoque = quantidadeEstoque;
-        this.imagem = imagem;
-    }
-
-    
     public Long getId() {
         return id;
     }
@@ -69,10 +74,5 @@ public class Catalogo {
     public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
-
-    
-
-
-
 
 }
