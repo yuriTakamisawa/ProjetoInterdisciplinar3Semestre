@@ -23,12 +23,6 @@ public class ProdutoService implements IprodutoService {
     private IimagemService imagemService;
 
     @Override
-    public Object listarProdutos() {
-
-        return repositoryP.findAll();
-    }
-
-    @Override
     public List<Object> listarProdutosComImagens() {
         List<Object> produtosComImagens = new ArrayList<>();
 
@@ -48,31 +42,6 @@ public class ProdutoService implements IprodutoService {
         }
 
         return produtosComImagens;
-    }
-
-    @Override
-    public List<Catalogo> listarCatalogo() {
-        List<Catalogo> lista = new ArrayList<>();
-        List<Produto> listaProdutos = repositoryP.findAll();
-        List<Imagem> listaImagens = imagemService.getAll();
-
-        for (Produto produto : listaProdutos) {
-            for (Imagem imagem : listaImagens) {
-                if (produto.getId().equals(imagem.getId())) {
-                    Catalogo catalogo = new Catalogo(
-                            produto.getId(),
-                            produto.getDescricao(),
-                            produto.getCategoria(),
-                            produto.getEstado(),
-                            produto.getCusto(),
-                            produto.getQuantidadeEstoque(),
-                            produto.getDataValidade(),
-                            imagem.getArquivo());
-                    lista.add(catalogo);
-                }
-            }
-        }
-        return lista;
     }
 
     @Override

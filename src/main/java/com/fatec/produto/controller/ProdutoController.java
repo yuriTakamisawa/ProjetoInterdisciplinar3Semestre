@@ -25,6 +25,14 @@ public class ProdutoController {
 		logger.info(">>>>>> apicontroller consulta todos produtos");
 		return ResponseEntity.status(HttpStatus.OK).body(produtoService.listarProdutosComImagens());
 	}
+
+	// @PostMapping
+	// public ResponseEntity<Object> adicionarProduto(@RequestBody Produto produto)
+	// {
+	// logger.info("ProdutoController adicionar produto");
+	// Produto novoProduto = produtoService.adicionarProduto(produto);
+	// return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
+	// }
 }
 
 // @RestController
@@ -60,13 +68,7 @@ public class ProdutoController {
 // }
 // }
 
-// @PostMapping
-// public ResponseEntity<Produto> adicionarProduto(@RequestBody Produto produto)
-// {
-// logger.info("ProdutoController adicionar produto");
-// Produto novoProduto = produtoService.adicionarProduto(produto);
-// return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
-// }
+//
 
 // @PutMapping("/{id}")
 // public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id,

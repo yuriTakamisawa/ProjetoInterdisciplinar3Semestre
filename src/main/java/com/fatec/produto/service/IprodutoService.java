@@ -7,8 +7,6 @@ import com.fatec.produto.model.Produto;
 
 public interface IprodutoService {
 
-    public List<Catalogo> listarCatalogo();
-
     Produto adicionarProduto(Produto produto);
 
     Produto listarProdutoPorId(Long id);
@@ -18,8 +16,6 @@ public interface IprodutoService {
     void deletarProduto(Long id);
 
     void deleteAll();
-
-    public Object listarProdutos();
 
     List<Object> listarProdutosComImagens();
 }
