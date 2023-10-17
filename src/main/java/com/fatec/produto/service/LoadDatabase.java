@@ -16,10 +16,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fatec.produto.model.IimagemRepository;
 import com.fatec.produto.model.Imagem;
-import com.fatec.produto.model.IprodutoRepository;
 import com.fatec.produto.model.Produto;
+import com.fatec.produto.model.IimagemRepository;
+import com.fatec.produto.model.IprodutoRepository;
 
 @Configuration
 public class LoadDatabase {

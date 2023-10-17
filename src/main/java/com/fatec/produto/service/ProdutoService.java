@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fatec.produto.model.Produto;
-import com.fatec.produto.model.Catalogo;
 import com.fatec.produto.model.IimagemRepository;
-import com.fatec.produto.model.Imagem;
 import com.fatec.produto.model.IprodutoRepository;
+import com.fatec.produto.model.Catalogo;
+import com.fatec.produto.model.Imagem;
 
 @Service
 public class ProdutoService implements IprodutoService {

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fatec.produto.model.Cliente;
-import com.fatec.produto.model.IclienteRepository;
+import com.fatec.produto.repository.IclienteRepository;
 
 @Service
 public class ClienteService implements IclienteService {

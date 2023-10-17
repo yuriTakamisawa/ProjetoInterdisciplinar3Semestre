@@ -12,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fatec.produto.model.IimagemRepository;
 import com.fatec.produto.model.Imagem;
-import com.fatec.produto.model.IprodutoRepository;
 import com.fatec.produto.model.Produto;
+import com.fatec.produto.model.IimagemRepository;
+import com.fatec.produto.model.IprodutoRepository;
 
 @Service
 public class ImagemService implements IimagemService {
